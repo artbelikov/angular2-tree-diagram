@@ -1,0 +1,63 @@
+<div *ngIf="node.isRoot() === false && onlyChild === false" class="line-to"></div>
+<div [ngClass]="{'ghost-box': !0, 'dragover': node.isDragover}"></div>
+<div id="{{node.guid}}"
+     [ngClass]="{'tree-element-container': true, 'tree-element-has-children': node.hasChildren()}">
+    <div class="tree-element-main"
+         draggable="true"
+         (drop)="node.drop($event)"
+         (dragenter)="node.dragenter($event)"
+         (dragstart)="node.dragstart($event)"
+         (dragover)="node.dragover($event)"
+         (dragleave)="node.dragleave($event)"
+    >
+        <div [ngClass]="{'rect':!0}">
+            <!--<div class="tree-buttons" ng-if="!nodes[element.id].compacted">-->
+                <!--<div class="edit"><span ng-mousedown="treeNodeInlineEdit($event,element.id)" class="grid-icon ion-compose"></span></div>-->
+            <!--</div>-->
+            <div class="tree-text">
+                <!--<span ng-if="nodes[element.id].compacted">{{nodes[element.parentId].children_count+' элемнтов скрыто'}}</span>-->
+                <span>{{node.displayName}}</span>
+            </div>
+            <!--&lt;!&ndash;<div class="tree-addons" ng-if="!nodes[element.id].compacted">&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <div [ngClass]="{'toggler': true, 'toggler-on': node.isExpanded}"
+                 (click)="node.toggle()"
+            ></div>
+        </div>
+    </div>
+    <div class="tree-children"
+         *ngIf="node.isExpanded">
+        <div class="tree-elements-group">
+            <div *ngFor="let child of node.children; let first = first; let last = last"
+                 [treeDiagramNode]="child"
+                 [onlyChild]="first && last"
+                 class="tree-parent tree-child"></div>
+        </div>
+    </div>
+    <!--<div class="tree-children"-->
+         <!--ng-if="treeExpandAll && nodes[element.id].hasChildren && !nodes['compact'+element.id] && nodes[element.id].toggle" ng-class="{'cc':loopOfTheMultipleChecking(element.id)}">-->
+        <!--<div ng-if="!nodes[element.id].hideChildlessContainer" class="tree-elements-group tree-elements-group-nochildren" ng-class="{'single':nodes[element.id].singlrGroup}" style="width:{{Math.floor(Math.sqrt(nodes[element.id].childless_count))*220}}px;">-->
+            <!--<div ng-if="(!nodes[element.id].hasChildren || !nodes[element.id].toggle) || (nodes[element.id].mobsCount && !nodes[element.id].toggle)"-->
+                 <!--ng-repeat="(key, element) in nodes[element.id].children"-->
+                 <!--class="tree-parent tree-child"  ng-include src="'./views/branch.html'">-->
+
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="tree-elements-group tree-elements-group-haschildren">-->
+            <!--<div ng-if="(nodes[element.id].hasChildren && nodes[element.id].toggle) || (nodes[element.id].mobsCount && nodes[element.id].toggle)" ng-repeat="(key, element) in nodes[element.id].children"-->
+                 <!--class="tree-parent tree-child"  ng-include src="'./views/branch.html'">-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="tree-compact" ng-if="nodes['compact'+element.id] && nodes[element.id].toggle">-->
+        <!--<div class="tree-parent tree-child" ng-init="element = nodes['compact'+element.id]"-->
+             <!--ng-include src="'./views/branch.html'"></div>-->
+
+    <!--</div>-->
+</div>
+<!--<div ng-if="!nodes[element.id].compacted"-->
+     <!--ng-mouseenter="treeDropAreaMouseenter($event,element.id)"-->
+     <!--ng-mouseleave="treeDropAreaMouseleave($event,element.id)"-->
+     <!--class="tree-drop-circle tree-drop-circle{{ element.id }}">-->
+<!--</div>-->

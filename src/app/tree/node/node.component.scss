@@ -1,0 +1,31 @@
+.toggler{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+  background: #2c4c63;
+  margin: 0 auto;
+  display: none;
+  z-index: 10;
+  transition: all 300ms;
+  &-on{
+    transform: rotateZ(-45deg);
+    background: #427396;
+  }
+}
+.tree-element-has-children{
+  > .tree-element-main{
+    .toggler{
+      display: block;
+    }
+    .rect {
+      background: #a3b0d1 !important;
+    }
+  }
+  > .tree-children{
+    display: inline-block;
+  }
+}

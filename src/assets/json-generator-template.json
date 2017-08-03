@@ -1,0 +1,25 @@
+[
+  {
+    'repeat(10)': {
+      guid: '{{guid()}}',
+      displayName: '{{company()}}',
+      children: [
+        {
+          'repeat(1, 5)': {
+			guid: '{{guid()}}',
+            displayName: '{{company()}}',
+            children: [
+              {
+                'repeat(0, 3)': {
+                  guid: '{{guid()}}',
+                  displayName: '{{company()}}',
+                  children: []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,10 @@
+<div *ngIf="nodes"
+     [style.transform]="paneTransform"
+     class="tree-roots-elements"
+     [ngClass]="{'tree-expand-all': isAllExpanded}">
+    <div [treeDiagramNode]="node.guid"
+         class="tree-parent tree-root tree-node"
+         *ngFor="let node of nodes.roots; let first = first; let last = last"
+         [onlyChild]="first && last"
+    ></div>
+</div>
