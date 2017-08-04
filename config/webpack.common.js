@@ -164,7 +164,12 @@ module.exports = function (options) {
          */
         {
           test: /\.scss$/,
-          use: ['to-string-loader', 'css-loader', 'sass-loader'],
+          use: [
+            'to-string-loader',
+            { loader: 'css-loader', options: {importLoaders: 1 } },
+            { loader: 'postcss-loader' },
+            'sass-loader'
+          ],
           exclude: [helpers.root('src', 'styles')]
         },
 
@@ -365,7 +370,11 @@ module.exports = function (options) {
        *
        * See: https://gist.github.com/sokra/27b24881210b56bbaff7
        */
-      new LoaderOptionsPlugin({}),
+      new LoaderOptionsPlugin({
+        options: {
+
+        }
+      }),
 
       new ngcWebpack.NgcWebpackPlugin({
         /**

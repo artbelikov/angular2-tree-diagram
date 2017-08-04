@@ -39,7 +39,6 @@ export class TreeDiagramNode{
   public toggle(state = !this._toggle){
     this._toggle = state;
     state && this.getThisNodeList().toggleSiblings(this.guid)
-    console.warn(this.displayName)
   }
 
   public childrenCount(){
@@ -53,9 +52,6 @@ export class TreeDiagramNode{
   public dragenter(event){
     this.isDragover = true;
     event.dataTransfer.dropEffect = 'move';
-
-    console.warn(event)
-
   }
 
   public dragleave(event){

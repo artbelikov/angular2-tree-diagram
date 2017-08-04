@@ -16,6 +16,9 @@
     background: #427396;
   }
 }
+.children-count{
+  display: none;
+}
 .tree-element-has-children{
   > .tree-element-main{
     .toggler{
@@ -23,9 +26,113 @@
     }
     .rect {
       background: #a3b0d1 !important;
+      .children-count{
+        display: inline;
+      }
     }
   }
   > .tree-children{
     display: inline-block;
+  }
+
+}
+.rect {
+  position: relative;
+  background-color: #fafafa !important;
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+  -webkit-print-color-adjust:exact;
+  cursor: default !important;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+.tree-element-main {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+}
+.tree-element-container {
+  width: 200px;
+  height: 100px;
+  z-index: 100;
+}
+.tree-children {
+  text-align: center;
+  transform: translate(calc(-50% + 100px),45px) rotateY(0deg);
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  perspective: 3000px;
+  perspective-origin: center bottom;
+  &:before {
+    content: "";
+    width: calc(50% - 1px);
+    position: absolute;
+    height: 30px;
+    left: 0;
+    top: -45px;
+    border-right: 1px solid #dadada;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.line-to {
+  position: absolute;
+  top: -30px;
+  border-top: 1px solid #dadada;
+  width: calc(100% + 30px);
+  display: none;
+}
+
+.tree-node {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  vertical-align: top;
+  &:before {
+    content: "";
+    width: calc(50% - 1px);
+    position: absolute;
+    height: 30px;
+    left: 0;
+    top: -30px;
+    border-right: 1px solid #dadada;
+  }
+}
+
+.tree-elements-group {
+  position: relative;
+  & > div {
+    & > .line-to {
+      left:0;
+      display: block;
+    }
+  }
+  & > div:first-of-type {
+    & > .line-to {
+      right: -30px;
+      width: calc(50% + 30px);
+      display: block;
+      left: auto;
+    }
+  }
+  & > div:last-of-type {
+    & > .line-to {
+      left: 0;
+      right: auto;
+      width: 50%;
+      display: block;
+    }
+  }
+  > .tree-child:last-child {
+    margin-right: 0;
+  }
+  > .tree-child:first-child {
+    margin-left: 0;
   }
 }

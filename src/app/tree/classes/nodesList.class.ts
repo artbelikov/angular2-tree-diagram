@@ -30,13 +30,10 @@ export class TreeDiagramNodesList{
     if (_origin.parentId){
       let _parent = this.getNode(_origin.parentId);
       _parent.children.delete(origin);
-      this._nodesList.set(_origin.parentId, _parent)
     }
     _target.children.add(origin);
-    this._nodesList.set(target, _target);
 
     _origin.parentId = target;
-    this._nodesList.set(origin, _origin);
     remakeRoots && this._makeRoots()
 
     this.serialize()

@@ -18,11 +18,4 @@ export class NodesListService {
     return this._nodesList.getNode(guid)
   }
 
-  public pane(element:ElementRef){
-    // element.addEventListener('mosedown', event => {
-    //   console.warn(event)
-    // })
-    console.warn(element)
-
-  }
 }
