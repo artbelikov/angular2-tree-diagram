@@ -80,11 +80,22 @@ export class TreeDiagramNode {
     return false;
   }
 
+  public dragend(event){
+    this.isDragover = false;
+    this.isDragging = false;
+  }
+
   public drop (event) {
     event.preventDefault();
     let guid = event.dataTransfer.getData("text")
     this.getThisNodeList().transfer(guid, this.guid)
     return false;
+  }
+
+  public addChild(){
+    let newNodeGuid = this.getThisNodeList().newNode(this.guid)
+    this.children.add(newNodeGuid)
+    this.toggle(true)
   }
 
 }

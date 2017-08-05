@@ -2,8 +2,21 @@ import { TreeDiagramNode } from './node.class';
 export class TreeDiagramNodesList {
   private _nodesList = new Map();
   public roots: TreeDiagramNode[];
+  private _nodeTemplate = {
+    displayName: 'New node',
+    children: [],
+    guid: '',
+    parentId: null
+  }
 
-  constructor (_nodes: any[], config) {
+  private uuidv4 () {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  constructor (_nodes: any[], private config) {
     _nodes.forEach(_node => {
       this._nodesList.set(_node.guid, new TreeDiagramNode(_node, config, this.getThisNodeList.bind(this)))
     });
@@ -101,6 +114,15 @@ export class TreeDiagramNodesList {
     this._nodesList.delete(guid)
     this._makeRoots()
     console.warn(this.values())
+  }
+
+  public newNode(parentId){
+    let _nodeTemplate = Object.assign({}, this._nodeTemplate)
+    _nodeTemplate.guid = this.uuidv4();
+    _nodeTemplate.parentId = parentId;
+    this._nodesList.set(_nodeTemplate.guid, new TreeDiagramNode(_nodeTemplate, this.config, this.getThisNodeList.bind(this)))
+    this._makeRoots()
+    return _nodeTemplate.guid
   }
 
 }

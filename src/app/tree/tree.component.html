@@ -5,4 +5,15 @@
          class="tree-root tree-node"
          *ngFor="let node of nodes.roots"
     ></div>
+    <div class="tree-new-node tree-root tree-node"
+         (click)="newNode()"
+    >
+        <div class="tree-element-container">
+            <div class="tree-element-main">
+                <div class="rect">
+                    <span>New node</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

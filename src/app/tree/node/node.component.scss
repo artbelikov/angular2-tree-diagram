@@ -149,6 +149,40 @@
     right: -10px;
     top: -10px;
   }
+  .add{
+    width: 20px;
+    height: 20px;
+    background-color: #256947;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    border-radius: 2px;
+    bottom: -10px;
+    &:before{
+      content: '';
+      position: absolute;
+      height: 12px;
+      width: 4px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: #2ba423;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 4px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: #2ba423;
+    }
+  }
 }
 
 

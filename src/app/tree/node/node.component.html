@@ -7,6 +7,7 @@
          (dragenter)="node.dragenter($event)"
          (dragstart)="node.dragstart($event)"
          (dragover)="node.dragover($event)"
+         (dragend)="node.dragend($event)"
          (dragleave)="node.dragleave($event)"
     >
         <div class="rect">
@@ -15,6 +16,7 @@
                 <div class="toggler"
                      (click)="node.toggle()"
                 ></div>
+                <div class="add" (click)="node.addChild()"></div>
             </div>
             <div class="tree-text">
                 <span>{{node.displayName}}</span>

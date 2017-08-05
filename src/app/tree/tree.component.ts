@@ -36,6 +36,10 @@ export class Tree {
 
   }
 
+  public newNode(){
+    this.nodesSrv.newNode()
+  }
+
   public ngOnInit () {
     System.import('../../assets/mock-data/mock-data.json')
       .then((json) => {

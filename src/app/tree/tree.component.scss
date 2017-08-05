@@ -32,3 +32,22 @@
     }
   }
 }
+.tree-new-node{
+  .rect{
+    opacity:0.5;
+    width: 200px;
+    height: 100px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #dadada;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  &:hover{
+    .rect{
+      opacity:1;
+    }
+  }
+}

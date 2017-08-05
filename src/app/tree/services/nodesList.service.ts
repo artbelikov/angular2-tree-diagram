@@ -18,4 +18,8 @@ export class NodesListService {
     return this._nodesList.getNode(guid)
   }
 
+  public newNode(){
+    this._nodesList.newNode()
+  }
+
 }
