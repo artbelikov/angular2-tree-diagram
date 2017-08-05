@@ -1,8 +1,7 @@
-<div *ngIf="node.isRoot() === false && onlyChild === false" class="line-to"></div>
-<div [ngClass]="{'ghost-box': !0, 'dragover': node.isDragover}"></div>
+<div class="line-to"></div>
 <div id="tree-node-{{node.guid}}"
-     [ngClass]="{'tree-element-container': true, 'tree-element-has-children': node.hasChildren()}">
-    <div class="tree-element-main"
+     [ngClass]="{'tree-element-container': !0, 'tree-element-has-children': node.hasChildren()}">
+    <div [ngClass]="{'tree-element-main': !0, 'dragover': node.isDragover, 'expanded': node.isExpanded, 'dragging': node.isDragging}"
          draggable="true"
          (drop)="node.drop($event)"
          (dragenter)="node.dragenter($event)"
@@ -10,27 +9,24 @@
          (dragover)="node.dragover($event)"
          (dragleave)="node.dragleave($event)"
     >
-        <div [ngClass]="{'rect':!0}">
-            <!--<div class="tree-buttons" ng-if="!nodes[element.id].compacted">-->
-                <!--<div class="edit"><span ng-mousedown="treeNodeInlineEdit($event,element.id)" class="grid-icon ion-compose"></span></div>-->
-            <!--</div>-->
+        <div class="rect">
+            <div class="buttons">
+                <div class="delete" (click)="node.destroy()"></div>
+                <div class="toggler"
+                     (click)="node.toggle()"
+                ></div>
+            </div>
             <div class="tree-text">
                 <span>{{node.displayName}}</span>
                 <span class="children-count"> ({{node.childrenCount()}})</span>
             </div>
-            <!--&lt;!&ndash;<div class="tree-addons" ng-if="!nodes[element.id].compacted">&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <div [ngClass]="{'toggler': true, 'toggler-on': node.isExpanded}"
-                 (click)="node.toggle()"
-            ></div>
         </div>
     </div>
     <div class="tree-children"
          *ngIf="node.isExpanded">
         <div class="tree-elements-group">
-            <div *ngFor="let child of node.children; let first = first; let last = last"
+            <div *ngFor="let child of node.children"
                  [treeDiagramNode]="child"
-                 [onlyChild]="first && last"
                  class="tree-node tree-child"></div>
         </div>
     </div>

@@ -11,10 +11,6 @@
   display: none;
   z-index: 10;
   transition: all 300ms;
-  &-on{
-    transform: rotateZ(-45deg);
-    background: #427396;
-  }
 }
 .children-count{
   display: none;
@@ -25,10 +21,10 @@
       display: block;
     }
     .rect {
-      background: #a3b0d1 !important;
-      .children-count{
-        display: inline;
-      }
+
+    }
+    .children-count{
+      display: inline;
     }
   }
   > .tree-children{
@@ -55,6 +51,33 @@
   margin: 0 auto;
   width: 200px;
   height: 100px;
+  &:hover{
+    .buttons{
+      display: block !important;
+    }
+  }
+  &.expanded{
+    .rect{
+      background-color: #bce5ff !important;
+    }
+    .toggler {
+      transform: rotateZ(-45deg);
+      background: #427396;
+    }
+  }
+  &.dragover{
+    .rect{
+      box-shadow: 0 0 5px #427396;
+    }
+  }
+  &.dragging{
+    .buttons{
+      display: none !important;
+    }
+    .tree-node:before{
+      display: none !important;
+    }
+  }
 }
 .tree-element-container {
   width: 200px;
@@ -103,7 +126,31 @@
     top: -30px;
     border-right: 1px solid #dadada;
   }
+  &:only-of-type{
+    > .line-to{
+      display: none !important;
+    }
+  }
 }
+
+.buttons{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  .delete{
+    width: 20px;
+    height: 20px;
+    background-color: #a34851;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+}
+
 
 .tree-elements-group {
   position: relative;

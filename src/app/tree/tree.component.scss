@@ -25,4 +25,10 @@
   display: inline-block;
   margin: 15px;
   vertical-align: top;
+  &:only-of-type{
+    background-color: #ff4a36;
+    > .line-to{
+      display: none;
+    }
+  }
 }
