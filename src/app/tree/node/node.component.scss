@@ -185,6 +185,9 @@
 }
 .tree-text{
   z-index: 10;
+  span{
+    cursor: pointer;
+  }
 }
 
 .tree-elements-group {

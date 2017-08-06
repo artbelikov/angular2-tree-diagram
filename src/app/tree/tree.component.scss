@@ -14,10 +14,10 @@
   position: relative;
   text-align: center;
   display: inline-block;
-  transform-origin: 0 0;
   white-space: nowrap;
   cursor: default !important;
   font-size: 0;
+  transform-origin: center;
 }
 
 .tree-node {
