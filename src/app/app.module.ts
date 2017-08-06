@@ -25,7 +25,6 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
 import { TreeDiagram } from './tree';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -52,7 +51,6 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
     HomeComponent,
     NoContentComponent,
     XLargeDirective

@@ -1,16 +1,20 @@
+@mixin tree-button{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 2px;
+}
 .toggler{
   position: absolute;
   left: 0;
   right: 0;
   bottom: -10px;
-  width: 20px;
-  cursor: pointer;
-  height: 20px;
   background: #2c4c63;
   margin: 0 auto;
   display: none;
   z-index: 10;
   transition: all 300ms;
+  @include tree-button;
 }
 .children-count{
   display: none;
@@ -141,22 +145,17 @@
   bottom: 0;
   display: none;
   .delete{
-    width: 20px;
-    height: 20px;
+    @include tree-button;
     background-color: #a34851;
-    cursor: pointer;
     position: absolute;
     right: -10px;
     top: -10px;
   }
   .add{
-    width: 20px;
-    height: 20px;
+    @include tree-button;
     background-color: #256947;
-    cursor: pointer;
     position: absolute;
     right: -10px;
-    border-radius: 2px;
     bottom: -10px;
     &:before{
       content: '';
@@ -184,7 +183,9 @@
     }
   }
 }
-
+.tree-text{
+  z-index: 10;
+}
 
 .tree-elements-group {
   position: relative;

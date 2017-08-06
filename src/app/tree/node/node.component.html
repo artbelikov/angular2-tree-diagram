@@ -19,7 +19,7 @@
                 <div class="add" (click)="node.addChild()"></div>
             </div>
             <div class="tree-text">
-                <span>{{node.displayName}}</span>
+                <span #disaplyName contenteditable (blur)="node.displayName=disaplyName.textContent">{{node.displayName}}</span>
                 <span class="children-count"> ({{node.childrenCount()}})</span>
             </div>
         </div>
