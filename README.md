@@ -2,7 +2,7 @@
 #### This is Angular adaptation of my Hierarchical UI module, still at the early stage of development.
 
 ### Preview
-<img src="http://i.imgur.com/CLXmVOk.png" width="500">
+<img src="http://i.imgur.com/WOpAOfv.png" width="500">
 
 ### Features
 - Drag and drop
