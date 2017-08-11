@@ -8,6 +8,7 @@
 - Drag and drop
 - Add/remove nodes
 - Tree-like UI
+- Zoom and pan
 - Pure CSS relation lines
 - No dependencies
 - More to come
