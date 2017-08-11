@@ -13,7 +13,6 @@
   margin: 0 auto;
   display: none;
   z-index: 10;
-  transition: all 300ms;
   @include tree-button;
 }
 .children-count{
@@ -43,21 +42,18 @@
   box-sizing: border-box;
   -webkit-print-color-adjust:exact;
   cursor: default !important;
-  width: 200px;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 15px;
+  border-radius: 2px;
 }
 .tree-element-main {
   text-align: center;
   margin: 0 auto;
-  width: 200px;
-  height: 100px;
   &:hover{
     .buttons{
-      display: block !important;
+      display: block;
     }
   }
   &.expanded{
@@ -84,13 +80,10 @@
   }
 }
 .tree-element-container {
-  width: 200px;
-  height: 100px;
   z-index: 100;
 }
 .tree-children {
   text-align: center;
-  transform: translate(calc(-50% + 100px),45px) rotateY(0deg);
   display: inline-block;
   position: relative;
   white-space: nowrap;
@@ -219,5 +212,22 @@
   }
   > .tree-child:first-child {
     margin-left: 0;
+  }
+}
+
+
+.tree-new-node{
+  .rect{
+    opacity:0.5;
+    border: 1px dashed #dadada;
+    cursor: pointer !important;
+  }
+  &:hover, &.dragover{
+    .rect{
+      opacity:1;
+    }
+  }
+  .tree-children, .buttons{
+    display: none !important;
   }
 }

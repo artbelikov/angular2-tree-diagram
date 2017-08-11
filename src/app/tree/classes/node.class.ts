@@ -10,7 +10,7 @@ export class TreeDiagramNode {
   public children: Set<string>;
   public displayName: string;
 
-  constructor (props, config, private getThisNodeList: () => TreeDiagramNodesList) {
+  constructor (props, config, public getThisNodeList: () => TreeDiagramNodesList) {
     if (!props.guid) {
       return;
     }
@@ -68,7 +68,7 @@ export class TreeDiagramNode {
     event.dataTransfer.effectAllowed = 'move';
     this.isDragging = true;
     this.toggle(false)
-    event.dataTransfer.setData('text/plain', this.guid)
+    this.getThisNodeList().draggingNodeGuid = this.guid
   }
 
   public dragover (event) {
@@ -87,7 +87,7 @@ export class TreeDiagramNode {
 
   public drop (event) {
     event.preventDefault();
-    let guid = event.dataTransfer.getData("text")
+    let guid = this.getThisNodeList().draggingNodeGuid
     this.getThisNodeList().transfer(guid, this.guid)
     return false;
   }
@@ -97,5 +97,4 @@ export class TreeDiagramNode {
     this.children.add(newNodeGuid)
     this.toggle(true)
   }
-
 }

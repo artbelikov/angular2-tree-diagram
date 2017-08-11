@@ -3,7 +3,7 @@ import {TreeDiagramNodesList} from '../classes/nodesList.class'
 
 @Injectable()
 export class NodesListService {
-  private _nodesList;
+  private _nodesList: TreeDiagramNodesList;
 
   public loadNodes(nodes: any[], config){
     this._nodesList = new TreeDiagramNodesList(nodes, config)
@@ -15,11 +15,15 @@ export class NodesListService {
   }
 
   public getNode(guid){
-    return this._nodesList.getNode(guid)
+    return guid && this._nodesList.getNode(guid)
   }
 
   public newNode(){
     this._nodesList.newNode()
+  }
+
+  public makerNode(){
+    return this._nodesList.makerGuid
   }
 
 }

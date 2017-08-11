@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
    * Set our default values
    */
   public localState = { value: '' };
+  public treeConfig = {
+    nodeWidth: 150,
+    nodeHeight: 100
+  }
   /**
    * TypeScript public modifiers
    */

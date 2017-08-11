@@ -1,19 +1,29 @@
-<div *ngIf="nodes"
-     [style.transform]="paneTransform"
-     class="tree-roots-elements">
-    <div [treeDiagramNode]="node.guid"
-         class="tree-root tree-node"
-         *ngFor="let node of nodes.roots"
-    ></div>
-    <div class="tree-new-node tree-root tree-node"
-         (click)="newNode()"
+<div class="tree-pane"
+     (mousedown)="onmousedown($event)"
+     (mouseup)="onmouseup($event)"
+     (mousemove)="onmousemove($event)"
+     (mousewheel)="onmousewheel($event)"
+>
+    <div
+            class="tree-paning-container"
+            [style.transform]="paneTransform"
     >
-        <div class="tree-element-container">
-            <div class="tree-element-main">
-                <div class="rect">
-                    <span>New node</span>
-                </div>
-            </div>
+        <div *ngIf="nodes"
+             class="tree-roots-elements"
+
+        >
+
+            <div [treeDiagramNode]="node.guid"
+                 class="tree-root tree-node"
+                 (mousedown)="preventMouse($event)"
+                 *ngFor="let node of nodes.roots"
+            ></div>
+            <div [treeDiagramNode]="nodeMaker"
+                 (click)="newNode()"
+                 (mousedown)="preventMouse($event)"
+                 class="tree-root tree-new-node tree-node"
+            ></div>
         </div>
     </div>
+
 </div>

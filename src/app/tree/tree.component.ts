@@ -1,8 +1,7 @@
 import {
   Component,
   Input,
-  ElementRef,
-  ViewEncapsulation
+  ElementRef
 } from '@angular/core';
 
 import { NodesListService } from './services/nodesList.service'
@@ -15,7 +14,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class Tree {
   private _config = {
-    nodeWidth: 150,
+    nodeWidth: 200,
     nodeHeight: 100
   };
   private mousewheelevt = /Firefox/i.test(navigator.userAgent) !== null ? 'DOMMouseScroll' : 'mousewheel';
@@ -26,13 +25,18 @@ export class Tree {
   private paneX = 0
   private paneY = 0
   public nodes
+  private pane
 
   @Input()
   public set config (settings) {
-    if (settings) {
+    if (typeof settings === 'object') {
       this._config = Object.assign(this._config, settings)
     }
   };
+
+  public get config(){
+    return this._config
+  }
 
   constructor (private nodesSrv: NodesListService, private rootElement: ElementRef, private sanitizer: DomSanitizer) {
 
@@ -49,13 +53,15 @@ export class Tree {
       });
   }
 
-  private _onmousedown (event) {
-    if (event.target === this.rootElement.nativeElement) {
-      this.paneDragging = true;
-    }
+  public get nodeMaker(){
+    return this.nodesSrv.makerNode()
   }
 
-  private _onmousemove (event) {
+  public onmousedown (event) {
+    this.paneDragging = true;
+  }
+
+  public onmousemove (event) {
     if (this.paneDragging) {
       let { movementX, movementY } = event
       this.paneX += movementX
@@ -64,15 +70,19 @@ export class Tree {
     }
   }
 
-  private _onmouseup () {
+  public onmouseup () {
     this.paneDragging = false
   }
 
-  private _makeTransform(){
+  public _makeTransform(){
     this.paneTransform = this.sanitizer.bypassSecurityTrustStyle(`translate(${this.paneX }px, ${this.paneY}px) scale(${this.zoom})`)
   }
 
-  private _onmousewheel(event){
+  public preventMouse(event){
+    event.stopPropagation()
+  }
+
+  public onmousewheel(event){
     let delta;
     event.preventDefault();
     delta = event.detail || event.wheelDelta;
@@ -81,19 +91,19 @@ export class Tree {
     this._makeTransform()
   }
 
-  public ngAfterViewInit () {
-    this.rootElement.nativeElement.addEventListener('mousedown', this._onmousedown.bind(this), false)
-    this.rootElement.nativeElement.addEventListener('mousemove', this._onmousemove.bind(this), false)
-    document.body.addEventListener('mouseup', this._onmouseup.bind(this), false)
-    
-    this.rootElement.nativeElement.onmousewheel = this._onmousewheel.bind(this)
-  }
-
-  public ngOnDestroy () {
-    this.rootElement.nativeElement.removeEventListener('mousedown', this._onmousedown)
-    this.rootElement.nativeElement.removeEventListener('mousemove', this._onmousemove)
-    this.rootElement.nativeElement.removeEventListener(this.mousewheelevt, this._onmousewheel)
-    document.body.removeEventListener('mouseup', this._onmouseup)
-  }
+  // public ngAfterViewInit () {
+  //   this.rootElement.nativeElement.addEventListener('mousedown', this._onmousedown.bind(this), false)
+  //   this.rootElement.nativeElement.addEventListener('mousemove', this._onmousemove.bind(this), false)
+  //   document.body.addEventListener('mouseup', this._onmouseup.bind(this), false)
+  //
+  //   this.rootElement.nativeElement.onmousewheel = this._onmousewheel.bind(this)
+  // }
+  //
+  // public ngOnDestroy () {
+  //   this.rootElement.nativeElement.removeEventListener('mousedown', this._onmousedown)
+  //   this.rootElement.nativeElement.removeEventListener('mousemove', this._onmousemove)
+  //   this.rootElement.nativeElement.removeEventListener(this.mousewheelevt, this._onmousewheel)
+  //   document.body.removeEventListener('mouseup', this._onmouseup)
+  // }
 
 }

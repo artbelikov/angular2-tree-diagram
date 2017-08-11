@@ -1,7 +1,10 @@
 import { TreeDiagramNode } from './node.class';
+import { TreeDiagramNodeMaker } from "./node-maker.class"
 export class TreeDiagramNodesList {
   private _nodesList = new Map();
   public roots: TreeDiagramNode[];
+  public makerGuid: string;
+  public draggingNodeGuid;
   private _nodeTemplate = {
     displayName: 'New node',
     children: [],
@@ -21,6 +24,16 @@ export class TreeDiagramNodesList {
       this._nodesList.set(_node.guid, new TreeDiagramNode(_node, config, this.getThisNodeList.bind(this)))
     });
     this._makeRoots()
+
+    this.makerGuid = this.uuidv4()
+    let node = {
+      guid: this.makerGuid,
+      parentId: 'root',
+      children: [],
+      displayName: 'New node'
+    }
+    let maker = new TreeDiagramNodeMaker(node, this.config, this.getThisNodeList.bind(this))
+    this._nodesList.set(this.makerGuid, maker)
   }
 
   private _makeRoots () {
@@ -35,7 +48,22 @@ export class TreeDiagramNodesList {
     return this._nodesList.get(guid)
   }
 
-  public transfer (origin: string, target: string) {
+  public rootNode(guid: string){
+    let node = this.getNode(guid)
+    node.isDragging = false
+    node.isDragover = false
+    if (node.parentId){
+      let parent = this.getNode(node.parentId)
+      parent.children.delete(guid)
+    }
+    node.parentId = null
+    this._makeRoots()
+    let maker = this.getNode(this.makerGuid)
+    maker.isDragging = false
+    maker.isDragover = false
+  }
+
+  public transfer (origin: string, target: string ) {
     let _origin = this.getNode(origin);
     let _target = this.getNode(target);
     _origin.isDragover = false;
@@ -116,7 +144,7 @@ export class TreeDiagramNodesList {
     console.warn(this.values())
   }
 
-  public newNode(parentId){
+  public newNode(parentId = null){
     let _nodeTemplate = Object.assign({}, this._nodeTemplate)
     _nodeTemplate.guid = this.uuidv4();
     _nodeTemplate.parentId = parentId;

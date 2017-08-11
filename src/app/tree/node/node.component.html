@@ -1,8 +1,19 @@
 <div class="line-to"></div>
 <div id="tree-node-{{node.guid}}"
-     [ngClass]="{'tree-element-container': !0, 'tree-element-has-children': node.hasChildren()}">
-    <div [ngClass]="{'tree-element-main': !0, 'dragover': node.isDragover, 'expanded': node.isExpanded, 'dragging': node.isDragging}"
-         draggable="true"
+     [ngClass]="{'tree-element-container': !0, 'tree-element-has-children': node.hasChildren()}"
+     [style.width.px]="node.width"
+     [style.height.px]="node.height"
+>
+    <div [ngClass]="{
+    'tree-element-main': !0,
+    'dragover': node.isDragover,
+    'expanded': node.isExpanded,
+    'dragging': node.isDragging,
+    'tree-new-node': node.isMaker
+    }"
+         [attr.draggable]="node.isMaker ? null : 'true'"
+         [style.width.px]="node.width"
+         [style.height.px]="node.height"
          (drop)="node.drop($event)"
          (dragenter)="node.dragenter($event)"
          (dragstart)="node.dragstart($event)"
@@ -10,7 +21,10 @@
          (dragend)="node.dragend($event)"
          (dragleave)="node.dragleave($event)"
     >
-        <div class="rect">
+        <div class="rect"
+             [style.width.px]="node.width"
+             [style.height.px]="node.height"
+        >
             <div class="buttons">
                 <div class="delete" (click)="node.destroy()"></div>
                 <div class="toggler"
@@ -18,13 +32,17 @@
                 ></div>
                 <div class="add" (click)="node.addChild()"></div>
             </div>
-            <div class="tree-text">
+            <div class="tree-text" *ngIf="node.isMaker">
+                <span>{{node.displayName}}</span>
+            </div>
+            <div class="tree-text" *ngIf="!node.isMaker">
                 <span #disaplyName contenteditable (blur)="node.displayName=disaplyName.textContent">{{node.displayName}}</span>
                 <span class="children-count"> ({{node.childrenCount()}})</span>
             </div>
         </div>
     </div>
     <div class="tree-children"
+         [style.transform]="childrenTransform"
          *ngIf="node.isExpanded">
         <div class="tree-elements-group">
             <div *ngFor="let child of node.children"
