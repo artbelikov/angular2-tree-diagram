@@ -6,9 +6,10 @@
 
 ### Features
 - Drag and drop
+- Zoom and pan
+- Configurable node width/height
 - Add/remove nodes
 - Tree-like UI
-- Zoom and pan
 - Pure CSS relation lines
 - No dependencies
 - More to come
