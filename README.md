@@ -12,7 +12,6 @@
 - Tree-like UI
 - Pure CSS relation lines
 - No dependencies
-- More to come
 
 ### Installation
 ```
