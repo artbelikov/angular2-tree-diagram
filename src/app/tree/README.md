@@ -46,5 +46,3 @@ data = {
   }
 }
 ```
-
-This project is based on [Angular4 Webpack Starter](https://github.com/AngularClass/angular-starter)

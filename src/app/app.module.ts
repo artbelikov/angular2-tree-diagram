@@ -17,6 +17,7 @@ import { ENV_PROVIDERS } from './environment';
 import { AppComponent } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { TreeDiagram } from './tree';
+//import { TreeDiagram } from 'angular2-tree-diagramm';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
