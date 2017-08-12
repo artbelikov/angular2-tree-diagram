@@ -32,10 +32,10 @@
                 ></div>
                 <div class="add" (click)="node.addChild()"></div>
             </div>
-            <div class="tree-text" *ngIf="node.isMaker">
+            <div class="tree-text tree-text-non-editable">
                 <span>{{node.displayName}}</span>
             </div>
-            <div class="tree-text" *ngIf="!node.isMaker">
+            <div class="tree-text tree-text-editable">
                 <span #disaplyName contenteditable (blur)="node.displayName=disaplyName.textContent">{{node.displayName}}</span>
                 <span class="children-count"> ({{node.childrenCount()}})</span>
             </div>

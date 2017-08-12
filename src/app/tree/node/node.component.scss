@@ -215,7 +215,9 @@
   }
 }
 
-
+.tree-text-non-editable{
+  display: none;
+}
 .tree-new-node{
   .rect{
     opacity:0.5;
@@ -229,5 +231,11 @@
   }
   .tree-children, .buttons{
     display: none !important;
+  }
+  .tree-text-non-editable{
+    display: block;
+  }
+  .tree-text-editable{
+    display: none;
   }
 }

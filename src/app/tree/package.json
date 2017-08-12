@@ -1,0 +1,19 @@
+{
+  "name": "angular2-tree-diagramm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artbelikov/angular2-tree-diagramm.git"
+  },
+  "author": "Artyom Evgrafov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artbelikov/angular2-tree-diagramm/issues"
+  },
+  "homepage": "https://github.com/artbelikov/angular2-tree-diagramm#readme"
+}

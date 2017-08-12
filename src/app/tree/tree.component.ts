@@ -17,7 +17,6 @@ export class Tree {
     nodeWidth: 200,
     nodeHeight: 100
   };
-  private mousewheelevt = /Firefox/i.test(navigator.userAgent) !== null ? 'DOMMouseScroll' : 'mousewheel';
 
   private paneDragging = false
   private paneTransform
@@ -25,32 +24,24 @@ export class Tree {
   private paneX = 0
   private paneY = 0
   public nodes
-  private pane
 
-  @Input()
-  public set config (settings) {
-    if (typeof settings === 'object') {
-      this._config = Object.assign(this._config, settings)
+  @Input() set data(_data){
+    if (!_data || !Array.isArray(_data.json)) return
+    if (typeof _data.config === 'object') {
+      this._config = Object.assign(this._config, _data.config)
     }
-  };
-
-  public get config(){
-    return this._config
+    this.nodes = this.nodesSrv.loadNodes(_data.json, this._config);
   }
 
-  constructor (private nodesSrv: NodesListService, private rootElement: ElementRef, private sanitizer: DomSanitizer) {
+  constructor (
+    private nodesSrv: NodesListService,
+    private sanitizer: DomSanitizer
+  ) {
 
   }
 
   public newNode(){
     this.nodesSrv.newNode()
-  }
-
-  public ngOnInit () {
-    System.import('../../assets/mock-data/mock-data.json')
-      .then((json) => {
-        this.nodes = this.nodesSrv.loadNodes(json, this._config);
-      });
   }
 
   public get nodeMaker(){
@@ -90,20 +81,5 @@ export class Tree {
     this.zoom = Math.min(Math.max(this.zoom, 0.2), 3);
     this._makeTransform()
   }
-
-  // public ngAfterViewInit () {
-  //   this.rootElement.nativeElement.addEventListener('mousedown', this._onmousedown.bind(this), false)
-  //   this.rootElement.nativeElement.addEventListener('mousemove', this._onmousemove.bind(this), false)
-  //   document.body.addEventListener('mouseup', this._onmouseup.bind(this), false)
-  //
-  //   this.rootElement.nativeElement.onmousewheel = this._onmousewheel.bind(this)
-  // }
-  //
-  // public ngOnDestroy () {
-  //   this.rootElement.nativeElement.removeEventListener('mousedown', this._onmousedown)
-  //   this.rootElement.nativeElement.removeEventListener('mousemove', this._onmousemove)
-  //   this.rootElement.nativeElement.removeEventListener(this.mousewheelevt, this._onmousewheel)
-  //   document.body.removeEventListener('mouseup', this._onmouseup)
-  // }
 
 }
