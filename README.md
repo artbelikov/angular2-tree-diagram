@@ -20,7 +20,7 @@ On [gh-pages](https://artbelikov.github.io/angular2-tree-diagram/)
 
 ### Installation
 ```
-npm i angular2-tree-diagramm
+npm i angular2-tree-diagram
 ```
 
 ### Usage

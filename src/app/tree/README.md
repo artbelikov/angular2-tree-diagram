@@ -1,8 +1,13 @@
-# Angular tree diagramm
-#### This is Angular 2+ Hierarchical UI module.
+# Angular tree diagram
+
+### About
+This is Angular 2+ Hierarchical UI module.
 
 ### Preview
 <img src="http://i.imgur.com/CfQXRGm.png" width="500">
+
+### Demo
+On [gh-pages](https://artbelikov.github.io/angular2-tree-diagram/)
 
 ### Features
 - Drag and drop
@@ -15,7 +20,7 @@
 
 ### Installation
 ```
-npm i angular2-tree-diagramm
+npm i angular2-tree-diagram
 ```
 
 ### Usage

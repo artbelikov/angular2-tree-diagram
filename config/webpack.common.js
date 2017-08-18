@@ -44,7 +44,7 @@ const METADATA = {
 module.exports = function (options) {
   isProd = options.env === 'production';
   if (isProd){
-    METADATA.baseUrl = '/angular2-tree-diagramm/'
+    METADATA.baseUrl = '/angular2-tree-diagram/'
   }
   return {
 

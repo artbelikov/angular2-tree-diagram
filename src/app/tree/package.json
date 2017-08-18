@@ -1,6 +1,6 @@
 {
-  "name": "angular2-tree-diagramm",
-  "version": "1.0.3",
+  "name": "angular2-tree-diagram",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/artbelikov/angular2-tree-diagramm.git"
+    "url": "git+https://github.com/artbelikov/angular2-tree-diagram.git"
   },
   "author": "Artyom Evgrafov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/artbelikov/angular2-tree-diagramm/issues"
+    "url": "https://github.com/artbelikov/angular2-tree-diagram/issues"
   },
-  "homepage": "https://github.com/artbelikov/angular2-tree-diagramm#readme"
+  "homepage": "https://github.com/artbelikov/angular2-tree-diagram#readme"
 }
