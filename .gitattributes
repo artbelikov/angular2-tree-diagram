@@ -1,1 +1,3 @@
 yarn.lock -diff
+* linguist-vendored
+src/* linguist-vendored=false
