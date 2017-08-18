@@ -7,7 +7,7 @@ This is Angular 2+ Hierarchical UI module.
 <img src="http://i.imgur.com/CfQXRGm.png" width="500">
 
 ### Demo
-On [gh-pages](https://artbelikov.github.io/angular2-tree-diagramm/)
+On [gh-pages](https://artbelikov.github.io/angular2-tree-diagram/)
 
 ### Features
 - Drag and drop
