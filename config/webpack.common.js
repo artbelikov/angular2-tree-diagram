@@ -30,7 +30,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Angular Hierarchical Diagram UI',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR
@@ -43,6 +43,9 @@ const METADATA = {
  */
 module.exports = function (options) {
   isProd = options.env === 'production';
+  if (isProd){
+    METADATA.baseUrl = '/angular2-tree-diagramm/'
+  }
   return {
 
     /**
@@ -336,7 +339,7 @@ module.exports = function (options) {
         title: METADATA.title,
         chunksSortMode: 'dependency',
         metadata: METADATA,
-        inject: 'body'
+        inject: 'body',
       }),
 
       /**
