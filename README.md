@@ -1,4 +1,4 @@
-# Angular tree diagramm
+# Angular tree diagram
 
 ### About
 This is Angular 2+ Hierarchical UI module. 
