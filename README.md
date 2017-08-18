@@ -6,6 +6,9 @@ This is Angular 2+ Hierarchical UI module.
 ### Preview
 <img src="http://i.imgur.com/CfQXRGm.png" width="500">
 
+### Demo
+On [gh-pages](https://artbelikov.github.io/angular2-tree-diagramm/)
+
 ### Features
 - Drag and drop
 - Zoom and pan
