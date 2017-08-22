@@ -8,7 +8,6 @@ import {
   createNewHosts,
   createInputTransfer
 } from '@angularclass/hmr';
-
 /*
  * Platform and Environment providers/directives/pipes
  */

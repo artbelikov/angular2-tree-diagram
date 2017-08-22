@@ -35,15 +35,30 @@
   
   <!-- CSS will be injected by webpack here -->
   <!-- Preload link tags will be injected by webpack here -->
-
-<link href="main.d799841e5ce53c2fb9389a7567f94401.css" rel="stylesheet"><link rel="preload" href="polyfills.7ccb341f8409cc7227ba.bundle.js" as="script"/><link rel="preload" href="main.4d8896e90596a513f0fd.bundle.js" as="script"/></head>
+  <style>
+    #preloader{
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+<link href="main.94f70b81864eff012d6e7264fdb29a51.css" rel="stylesheet"><link rel="preload" href="polyfills.7ccb341f8409cc7227ba.bundle.js" as="script"/><link rel="preload" href="main.1e9e9515513b93ad1cff.bundle.js" as="script"/></head>
 
 <body>
 
   <app>
-    Loading...
+    <div id="preloader">
+      <svg width="129px"  height="129px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-eclipse" style="background: none;">
+        <path stroke="none" d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#387abe" transform="rotate(18 50 51)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+        </path>
+      </svg>
+    </div>
   </app>
 
   <!-- Scripts will be injected by webpack here -->
-<script type="text/javascript" src="polyfills.7ccb341f8409cc7227ba.bundle.js"></script><script type="text/javascript" src="main.4d8896e90596a513f0fd.bundle.js" async></script></body>
+<script type="text/javascript" src="polyfills.7ccb341f8409cc7227ba.bundle.js"></script><script type="text/javascript" src="main.1e9e9515513b93ad1cff.bundle.js" async></script></body>
 </html>
