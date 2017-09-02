@@ -57,7 +57,7 @@ export class Tree {
       let { movementX, movementY } = event
       this.paneX += movementX
       this.paneY += movementY
-      this._makeTransform()
+      this.makeTransform()
     }
   }
 
@@ -65,7 +65,7 @@ export class Tree {
     this.paneDragging = false
   }
 
-  public _makeTransform(){
+  public makeTransform(){
     this.paneTransform = this.sanitizer.bypassSecurityTrustStyle(`translate(${this.paneX }px, ${this.paneY}px) scale(${this.zoom})`)
   }
 
@@ -79,7 +79,7 @@ export class Tree {
     delta = event.detail || event.wheelDelta;
     this.zoom += delta / 1000 / 2;
     this.zoom = Math.min(Math.max(this.zoom, 0.2), 3);
-    this._makeTransform()
+    this.makeTransform()
   }
 
 }

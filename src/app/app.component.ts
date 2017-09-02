@@ -35,14 +35,12 @@ export class AppComponent{
   public tree: any
 
 
-  public ngOnInit () {
-    System.import('../assets/mock-data/mock-data.json')
-      .then((json) => {
-        this.tree = {
-          json: json,
-          config: this.treeConfig
-        };
-      });
+  public async ngOnInit () {
+    let json = await System.import('../assets/mock-data/mock-data.json')
+    this.tree = {
+      json: json,
+      config: this.treeConfig
+    };
   }
 
 }
