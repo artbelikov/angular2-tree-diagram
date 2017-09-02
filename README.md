@@ -26,7 +26,7 @@ npm i angular2-tree-diagram
 ### Usage
 - Import module in your project
 - Use tree-diagram component
-- Pass array of nodes and config
+- Pass an array of nodes and the config
 - See example.json for more details
 
 ### Example
