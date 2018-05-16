@@ -356,7 +356,7 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 128:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -371,7 +371,7 @@ exports.empty = {
 
 /***/ }),
 
-/***/ 129:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -397,6 +397,17 @@ function getSymbolObservable(context) {
 exports.getSymbolObservable = getSymbolObservable;
 exports.$$observable = getSymbolObservable(root_1.root);
 //# sourceMappingURL=observable.js.map
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// typeof any so that it we don't have to cast when comparing a result to the error object
+exports.errorObject = { e: {} };
+//# sourceMappingURL=errorObject.js.map
 
 /***/ }),
 
@@ -6257,7 +6268,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__(136)(module)
+        return __webpack_require__(135)(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -6273,7 +6284,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__(136)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__(135)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -15428,23 +15439,12 @@ function transition$$1(stateChangeExpr, steps) {
 
 "use strict";
 
-// typeof any so that it we don't have to cast when comparing a result to the error object
-exports.errorObject = { e: {} };
-//# sourceMappingURL=errorObject.js.map
-
-/***/ }),
-
-/***/ 131:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 exports.isArray = Array.isArray || (function (x) { return x && typeof x.length === 'number'; });
 //# sourceMappingURL=isArray.js.map
 
 /***/ }),
 
-/***/ 132:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15457,7 +15457,7 @@ exports.isFunction = isFunction;
 
 /***/ }),
 
-/***/ 133:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15470,7 +15470,7 @@ exports.isObject = isObject;
 
 /***/ }),
 
-/***/ 134:
+/***/ 133:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15483,7 +15483,7 @@ exports.isScheduler = isScheduler;
 
 /***/ }),
 
-/***/ 135:
+/***/ 134:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15843,7 +15843,7 @@ function updateLink (link, options, obj) {
 
 /***/ }),
 
-/***/ 136:
+/***/ 135:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -15852,11 +15852,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 136;
+webpackEmptyAsyncContext.id = 135;
 
 /***/ }),
 
-/***/ 137:
+/***/ 136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15866,7 +15866,7 @@ webpackEmptyAsyncContext.id = 136;
 /* unused harmony export ɵINTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS */
 /* unused harmony export ɵResourceLoaderImpl */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_compiler__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_compiler__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(42);
@@ -16040,11 +16040,11 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__
 
 /***/ }),
 
-/***/ 138:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(160);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
 /**
  * App
@@ -16054,7 +16054,7 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__
 
 /***/ }),
 
-/***/ 159:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43926,31 +43926,29 @@ function _mergeArrays(parts) {
 
 /***/ }),
 
-/***/ 160:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_service__ = __webpack_require__(91);
 
 /**
  * Angular 2 decorators and services
  */
-
 
 /**
  * App Component
  * Top Level Component
  */
 var AppComponent = (function () {
-    function AppComponent(appState) {
-        this.appState = appState;
+    function AppComponent() {
         this.treeConfig = {
             nodeWidth: 150,
             nodeHeight: 100
         };
+        this.tree = null;
     }
     AppComponent.prototype.ngOnInit = function () {
         return __WEBPACK_IMPORTED_MODULE_0_tslib__["d" /* __awaiter */](this, void 0, void 0, function () {
@@ -43978,16 +43976,16 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
         styles: [
             __webpack_require__(346)
         ],
-        template: "\n      <tree-diagram [data]=\"tree\"></tree-diagram>\n  "
+        template: "\n        <tree-diagram [data]=\"tree\"></tree-diagram>\n    "
     }),
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__app_service__["a" /* AppState */]])
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [])
 ], AppComponent);
 
 
 
 /***/ }),
 
-/***/ 161:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43998,8 +43996,8 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angularclass_hmr__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angularclass_hmr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__angularclass_hmr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environment__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_service__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_service__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tree__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__styles_styles_scss__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__styles_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__styles_styles_scss__);
@@ -44017,7 +44015,7 @@ AppComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
 
 
 
-//import { TreeDiagram } from 'angular2-tree-diagramm';
+// import { TreeDiagram } from 'angular2-tree-diagramm';
 
 
 // Application wide providers
@@ -44110,13 +44108,71 @@ AppModule = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
 
 /***/ }),
 
+/***/ 161:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppState; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(13);
+
+
+var AppState = (function () {
+    function AppState() {
+        this._state = {};
+    }
+    Object.defineProperty(AppState.prototype, "state", {
+        /**
+         * Already return a clone of the current state.
+         */
+        get: function () {
+            return this._state = this._clone(this._state);
+        },
+        /**
+         * Never allow mutation
+         */
+        set: function (value) {
+            throw new Error('do not mutate the `.state` directly');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AppState.prototype.get = function (prop) {
+        /**
+         * Use our state getter for the clone.
+         */
+        var state = this.state;
+        return state.hasOwnProperty(prop) ? state[prop] : state;
+    };
+    AppState.prototype.set = function (prop, value) {
+        /**
+         * Internally mutate our state.
+         */
+        return this._state[prop] = value;
+    };
+    AppState.prototype._clone = function (object) {
+        /**
+         * Simple object clone.
+         */
+        return JSON.parse(JSON.stringify(object));
+    };
+    return AppState;
+}());
+AppState = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */])()
+], AppState);
+
+
+
+/***/ }),
+
 /***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreeDiagramNodeMaker; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_class__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_class__ = __webpack_require__(91);
 
 
 var TreeDiagramNodeMaker = (function (_super) {
@@ -44167,7 +44223,7 @@ var TreeDiagramNodeMaker = (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreeDiagramNodesList; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_class__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_class__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_maker_class__ = __webpack_require__(162);
 
 
@@ -44175,13 +44231,13 @@ var TreeDiagramNodesList = (function () {
     function TreeDiagramNodesList(_nodes, config) {
         var _this = this;
         this.config = config;
-        this._nodesList = new Map();
         this._nodeTemplate = {
             displayName: 'New node',
             children: [],
             guid: '',
             parentId: null
         };
+        this._nodesList = new Map();
         _nodes.forEach(function (_node) {
             _this._nodesList.set(_node.guid, new __WEBPACK_IMPORTED_MODULE_0__node_class__["a" /* TreeDiagramNode */](_node, config, _this.getThisNodeList.bind(_this)));
         });
@@ -44196,15 +44252,6 @@ var TreeDiagramNodesList = (function () {
         var maker = new __WEBPACK_IMPORTED_MODULE_1__node_maker_class__["a" /* TreeDiagramNodeMaker */](node, this.config, this.getThisNodeList.bind(this));
         this._nodesList.set(this.makerGuid, maker);
     }
-    TreeDiagramNodesList.prototype.uuidv4 = function () {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    };
-    TreeDiagramNodesList.prototype._makeRoots = function () {
-        this.roots = Array.from(this.values()).filter(function (node) { return node.isRoot(); });
-    };
     TreeDiagramNodesList.prototype.values = function () {
         return this._nodesList.values();
     };
@@ -44244,8 +44291,8 @@ var TreeDiagramNodesList = (function () {
         }
         _target.children.add(origin);
         _origin.parentId = target;
-        remakeRoots && this._makeRoots();
         this.serialize();
+        return remakeRoots && this._makeRoots();
     };
     TreeDiagramNodesList.prototype.getThisNodeList = function () {
         return this;
@@ -44300,7 +44347,6 @@ var TreeDiagramNodesList = (function () {
         }
         this._nodesList.delete(guid);
         this._makeRoots();
-        console.warn(this.values());
     };
     TreeDiagramNodesList.prototype.newNode = function (parentId) {
         if (parentId === void 0) { parentId = null; }
@@ -44310,6 +44356,15 @@ var TreeDiagramNodesList = (function () {
         this._nodesList.set(_nodeTemplate.guid, new __WEBPACK_IMPORTED_MODULE_0__node_class__["a" /* TreeDiagramNode */](_nodeTemplate, this.config, this.getThisNodeList.bind(this)));
         this._makeRoots();
         return _nodeTemplate.guid;
+    };
+    TreeDiagramNodesList.prototype._makeRoots = function () {
+        this.roots = Array.from(this.values()).filter(function (node) { return node.isRoot(); });
+    };
+    TreeDiagramNodesList.prototype.uuidv4 = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     };
     return TreeDiagramNodesList;
 }());
@@ -44344,7 +44399,7 @@ var TreeDiagramNodesList = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Node; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NodeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nodesList_service__ = __webpack_require__(66);
@@ -44353,12 +44408,12 @@ var TreeDiagramNodesList = (function () {
 
 
 
-var Node = (function () {
-    function Node(nodesSrv, sanitizer) {
+var NodeComponent = (function () {
+    function NodeComponent(nodesSrv, sanitizer) {
         this.nodesSrv = nodesSrv;
         this.sanitizer = sanitizer;
     }
-    Object.defineProperty(Node.prototype, "treeDiagramNode", {
+    Object.defineProperty(NodeComponent.prototype, "treeDiagramNode", {
         set: function (guid) {
             this.node = this.nodesSrv.getNode(guid);
             this.childrenTransform = this.sanitizer.bypassSecurityTrustStyle("translate(calc(-50% + " + Math.round(this.node.width / 2) + "px), 45px)");
@@ -44366,21 +44421,21 @@ var Node = (function () {
         enumerable: true,
         configurable: true
     });
-    return Node;
+    return NodeComponent;
 }());
 __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["N" /* Input */])(),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [Object])
-], Node.prototype, "treeDiagramNode", null);
-Node = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
+], NodeComponent.prototype, "treeDiagramNode", null);
+NodeComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Z" /* Component */])({
         selector: '[treeDiagramNode]',
         styles: [__webpack_require__(347)],
         template: __webpack_require__(322),
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_nodesList_service__["a" /* NodesListService */], __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]])
-], Node);
+], NodeComponent);
 
 
 
@@ -44390,7 +44445,7 @@ Node = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tree; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nodesList_service__ = __webpack_require__(66);
@@ -44399,23 +44454,24 @@ Node = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
 
 
 
-var Tree = (function () {
-    function Tree(nodesSrv, sanitizer) {
+var TreeComponent = (function () {
+    function TreeComponent(nodesSrv, sanitizer) {
         this.nodesSrv = nodesSrv;
         this.sanitizer = sanitizer;
-        this._config = {
-            nodeWidth: 200,
-            nodeHeight: 100
-        };
         this.paneDragging = false;
         this.zoom = 1;
         this.paneX = 0;
         this.paneY = 0;
+        this._config = {
+            nodeWidth: 200,
+            nodeHeight: 100
+        };
     }
-    Object.defineProperty(Tree.prototype, "data", {
+    Object.defineProperty(TreeComponent.prototype, "data", {
         set: function (_data) {
-            if (!_data || !Array.isArray(_data.json))
+            if (!_data || !Array.isArray(_data.json)) {
                 return;
+            }
             if (typeof _data.config === 'object') {
                 this._config = Object.assign(this._config, _data.config);
             }
@@ -44424,20 +44480,20 @@ var Tree = (function () {
         enumerable: true,
         configurable: true
     });
-    Tree.prototype.newNode = function () {
+    TreeComponent.prototype.newNode = function () {
         this.nodesSrv.newNode();
     };
-    Object.defineProperty(Tree.prototype, "nodeMaker", {
+    Object.defineProperty(TreeComponent.prototype, "nodeMaker", {
         get: function () {
             return this.nodesSrv.makerNode();
         },
         enumerable: true,
         configurable: true
     });
-    Tree.prototype.onmousedown = function (event) {
+    TreeComponent.prototype.onmousedown = function () {
         this.paneDragging = true;
     };
-    Tree.prototype.onmousemove = function (event) {
+    TreeComponent.prototype.onmousemove = function (event) {
         if (this.paneDragging) {
             var movementX = event.movementX, movementY = event.movementY;
             this.paneX += movementX;
@@ -44445,16 +44501,16 @@ var Tree = (function () {
             this.makeTransform();
         }
     };
-    Tree.prototype.onmouseup = function () {
+    TreeComponent.prototype.onmouseup = function () {
         this.paneDragging = false;
     };
-    Tree.prototype.makeTransform = function () {
+    TreeComponent.prototype.makeTransform = function () {
         this.paneTransform = this.sanitizer.bypassSecurityTrustStyle("translate(" + this.paneX + "px, " + this.paneY + "px) scale(" + this.zoom + ")");
     };
-    Tree.prototype.preventMouse = function (event) {
+    TreeComponent.prototype.preventMouse = function (event) {
         event.stopPropagation();
     };
-    Tree.prototype.onmousewheel = function (event) {
+    TreeComponent.prototype.onmousewheel = function (event) {
         var delta;
         event.preventDefault();
         delta = event.detail || event.wheelDelta;
@@ -44462,14 +44518,14 @@ var Tree = (function () {
         this.zoom = Math.min(Math.max(this.zoom, 0.2), 3);
         this.makeTransform();
     };
-    return Tree;
+    return TreeComponent;
 }());
 __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["N" /* Input */])(),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:type", Object),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [Object])
-], Tree.prototype, "data", null);
-Tree = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
+], TreeComponent.prototype, "data", null);
+TreeComponent = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Z" /* Component */])({
         selector: 'tree-diagram',
         styles: [__webpack_require__(348)],
@@ -44477,7 +44533,7 @@ Tree = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
     }),
     __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __metadata */]("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_nodesList_service__["a" /* NodesListService */],
         __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]])
-], Tree);
+], TreeComponent);
 
 
 
@@ -44511,15 +44567,15 @@ TreeDiagram = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
             /**
              * Components / Directives/ Pipes
              */
-            __WEBPACK_IMPORTED_MODULE_3__tree_component__["a" /* Tree */],
-            __WEBPACK_IMPORTED_MODULE_4__node__["a" /* Node */]
+            __WEBPACK_IMPORTED_MODULE_3__tree_component__["a" /* TreeComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__node__["a" /* NodeComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["e" /* CommonModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_3__tree_component__["a" /* Tree */],
-            __WEBPACK_IMPORTED_MODULE_4__node__["a" /* Node */]
+            __WEBPACK_IMPORTED_MODULE_3__tree_component__["a" /* TreeComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__node__["a" /* NodeComponent */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_5__services_nodesList_service__["a" /* NodesListService */]
@@ -44537,9 +44593,9 @@ TreeDiagram = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["main"] = main;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_environment__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app__ = __webpack_require__(137);
 /**
  * Angular bootstrapping
  */
@@ -44926,7 +44982,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(38);
 var ScalarObservable_1 = __webpack_require__(330);
 var EmptyObservable_1 = __webpack_require__(329);
-var isScheduler_1 = __webpack_require__(134);
+var isScheduler_1 = __webpack_require__(133);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -45382,7 +45438,7 @@ exports.merge = merge_1.mergeStatic;
 
 var ArrayObservable_1 = __webpack_require__(327);
 var mergeAll_1 = __webpack_require__(333);
-var isScheduler_1 = __webpack_require__(134);
+var isScheduler_1 = __webpack_require__(133);
 /* tslint:disable:max-line-length */
 /**
  * Creates an output Observable which concurrently emits all values from every
@@ -45865,13 +45921,13 @@ exports.isPromise = isPromise;
 "use strict";
 
 var root_1 = __webpack_require__(52);
-var isArray_1 = __webpack_require__(131);
+var isArray_1 = __webpack_require__(130);
 var isPromise_1 = __webpack_require__(339);
-var isObject_1 = __webpack_require__(133);
+var isObject_1 = __webpack_require__(132);
 var Observable_1 = __webpack_require__(38);
 var iterator_1 = __webpack_require__(336);
 var InnerSubscriber_1 = __webpack_require__(324);
-var observable_1 = __webpack_require__(129);
+var observable_1 = __webpack_require__(128);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -45951,7 +46007,7 @@ exports.subscribeToResult = subscribeToResult;
 
 var Subscriber_1 = __webpack_require__(51);
 var rxSubscriber_1 = __webpack_require__(89);
-var Observer_1 = __webpack_require__(128);
+var Observer_1 = __webpack_require__(127);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -45976,7 +46032,7 @@ exports.toSubscriber = toSubscriber;
 
 "use strict";
 
-var errorObject_1 = __webpack_require__(130);
+var errorObject_1 = __webpack_require__(129);
 var tryCatchTarget;
 function tryCatcher() {
     try {
@@ -46011,7 +46067,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(135)(content, options);
+var update = __webpack_require__(134)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -46043,7 +46099,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(135)(content, options);
+var update = __webpack_require__(134)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -46209,7 +46265,7 @@ module.exports = function (css) {
 
 var root_1 = __webpack_require__(52);
 var toSubscriber_1 = __webpack_require__(341);
-var observable_1 = __webpack_require__(129);
+var observable_1 = __webpack_require__(128);
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
  * of RxJS.
@@ -50921,9 +50977,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(132);
+var isFunction_1 = __webpack_require__(131);
 var Subscription_1 = __webpack_require__(63);
-var Observer_1 = __webpack_require__(128);
+var Observer_1 = __webpack_require__(127);
 var rxSubscriber_1 = __webpack_require__(89);
 /**
  * Implements the {@link Observer} interface and extends the
@@ -51198,11 +51254,11 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isArray_1 = __webpack_require__(131);
-var isObject_1 = __webpack_require__(133);
-var isFunction_1 = __webpack_require__(132);
+var isArray_1 = __webpack_require__(130);
+var isObject_1 = __webpack_require__(132);
+var isFunction_1 = __webpack_require__(131);
 var tryCatch_1 = __webpack_require__(342);
-var errorObject_1 = __webpack_require__(130);
+var errorObject_1 = __webpack_require__(129);
 var UnsubscriptionError_1 = __webpack_require__(338);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
@@ -55739,64 +55795,6 @@ var ENV_PROVIDERS = PROVIDERS.slice();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppState; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(13);
-
-
-var AppState = (function () {
-    function AppState() {
-        this._state = {};
-    }
-    Object.defineProperty(AppState.prototype, "state", {
-        /**
-         * Already return a clone of the current state.
-         */
-        get: function () {
-            return this._state = this._clone(this._state);
-        },
-        /**
-         * Never allow mutation
-         */
-        set: function (value) {
-            throw new Error('do not mutate the `.state` directly');
-        },
-        enumerable: true,
-        configurable: true
-    });
-    AppState.prototype.get = function (prop) {
-        /**
-         * Use our state getter for the clone.
-         */
-        var state = this.state;
-        return state.hasOwnProperty(prop) ? state[prop] : state;
-    };
-    AppState.prototype.set = function (prop, value) {
-        /**
-         * Internally mutate our state.
-         */
-        return this._state[prop] = value;
-    };
-    AppState.prototype._clone = function (object) {
-        /**
-         * Simple object clone.
-         */
-        return JSON.parse(JSON.stringify(object));
-    };
-    return AppState;
-}());
-AppState = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */])()
-], AppState);
-
-
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreeDiagramNode; });
 var TreeDiagramNode = (function () {
     function TreeDiagramNode(props, config, getThisNodeList) {
@@ -55834,7 +55832,7 @@ var TreeDiagramNode = (function () {
     TreeDiagramNode.prototype.toggle = function (state) {
         if (state === void 0) { state = !this._toggle; }
         this._toggle = state;
-        state && this.getThisNodeList().toggleSiblings(this.guid);
+        return state && this.getThisNodeList().toggleSiblings(this.guid);
     };
     TreeDiagramNode.prototype.childrenCount = function () {
         return this.children.size;
@@ -55862,7 +55860,7 @@ var TreeDiagramNode = (function () {
         event.dataTransfer.dropEffect = 'move';
         return false;
     };
-    TreeDiagramNode.prototype.dragend = function (event) {
+    TreeDiagramNode.prototype.dragend = function () {
         this.isDragover = false;
         this.isDragging = false;
     };

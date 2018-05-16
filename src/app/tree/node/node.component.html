@@ -26,18 +26,25 @@
              [style.height.px]="node.height"
         >
             <div class="buttons">
-                <div class="delete" (click)="node.destroy()"></div>
+                <div class="delete" *ngIf="isEditable" (click)="node.destroy()"></div>
                 <div class="toggler"
                      (click)="node.toggle()"
                 ></div>
-                <div class="add" (click)="node.addChild()"></div>
+                <div class="add" *ngIf="isEditable" (click)="node.addChild()"></div>
             </div>
             <div class="tree-text tree-text-non-editable">
                 <span>{{node.displayName}}</span>
             </div>
-            <div class="tree-text tree-text-editable">
+            <div class="tree-text tree-text-editable" *ngIf="isEditable">
                 <span #disaplyName contenteditable [innerHtml]="node.displayName" (blur)="node.displayName=$event.srcElement.innerText"></span>
                 <span class="children-count"> ({{node.childrenCount()}})</span>
+            </div>
+            <div class="tree-text tree-text-editable" *ngIf="!isEditable">
+                <span>{{node.displayName}}</span>
+                <span class="children-count"> ({{node.childrenCount()}})</span>
+            </div>
+            <div class="tree-text status-style tree-text-editable">
+                <span>{{node.status}}</span>
             </div>
         </div>
     </div>

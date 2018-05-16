@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {
-  NgModule,
-  ApplicationRef
+      NgModule,
+      ApplicationRef
 } from '@angular/core';
 import {
-  removeNgStyles,
-  createNewHosts,
-  createInputTransfer
+      removeNgStyles,
+      createNewHosts,
+      createInputTransfer
 } from '@angularclass/hmr';
 /*
  * Platform and Environment providers/directives/pipes
@@ -16,37 +16,37 @@ import { ENV_PROVIDERS } from './environment';
 import { AppComponent } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { TreeDiagram } from './tree';
-//import { TreeDiagram } from 'angular2-tree-diagramm';
+// import { TreeDiagram } from 'angular2-tree-diagramm';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
-  AppState
+    AppState
 ];
 
 type StoreType = {
-  state: InternalStateType,
-  restoreInputValues: () => void,
-  disposeOldHosts: () => void
+      state: InternalStateType,
+      restoreInputValues: () => void,
+      disposeOldHosts: () => void
 };
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ AppComponent ],
-  declarations: [
-    AppComponent
-  ],
+    bootstrap: [ AppComponent ],
+    declarations: [
+        AppComponent
+    ],
   /**
    * Import Angular's modules.
    */
-  imports: [
-    BrowserModule,
-    TreeDiagram
-  ],
+      imports: [
+        BrowserModule,
+        TreeDiagram
+      ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
    */

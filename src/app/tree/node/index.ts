@@ -1,1 +1,1 @@
-export {Node} from './node.component'
+export {NodeComponent} from './node.component';

@@ -46,7 +46,7 @@
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  border-radius: 2px;
+  border-radius: 7px;
 }
 .tree-element-main {
   text-align: center;
@@ -181,6 +181,13 @@
   span{
     cursor: pointer;
   }
+}
+
+.status-style {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-style: italic;
 }
 
 .tree-elements-group {

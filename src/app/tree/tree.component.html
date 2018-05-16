@@ -14,16 +14,17 @@
         >
 
             <div [treeDiagramNode]="node.guid"
+                 [isEditable]="isEditable"
                  class="tree-root tree-node"
                  (mousedown)="preventMouse($event)"
                  *ngFor="let node of nodes.roots"
             ></div>
-            <div [treeDiagramNode]="nodeMaker"
+            <div *ngIf='isEditable'
+                 [treeDiagramNode]="nodeMaker"
                  (click)="newNode()"
                  (mousedown)="preventMouse($event)"
                  class="tree-root tree-new-node tree-node"
             ></div>
         </div>
     </div>
-
 </div>

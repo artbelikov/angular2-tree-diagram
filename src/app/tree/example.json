@@ -2,6 +2,7 @@
   {
     "guid": "bc4c7a02-5379-4046-92be-12c67af4295a",
     "displayName": "Elentrix",
+    "status": "good",
     "children": [
       "85d412c2-ebc1-4d56-96c9-7da433ac9bb2",
       "28aac445-83b1-464d-9695-a4157dab6eac"
@@ -19,6 +20,7 @@
     "guid": "a2d8ec53-de45-4182-af74-58c27dc8c06c",
     "displayName": "Plasmox",
     "parentId": "097b8d7c-e0d3-483d-9770-cb5306f7801c",
+    "status": "good",
     "children": [
       "c46390bf-31be-4cb6-b91c-15cd55031d32",
       "96ce37a7-3e3d-40b2-96e9-e887ff75a89b",

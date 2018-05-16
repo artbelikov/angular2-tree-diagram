@@ -1,26 +1,26 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { Tree } from './tree.component'
-import { Node } from './node'
-import { NodesListService } from './services/nodesList.service'
+import { TreeComponent } from './tree.component';
+import { NodeComponent } from './node';
+import { NodesListService } from './services/nodesList.service';
 
 @NgModule({
   declarations: [
     /**
      * Components / Directives/ Pipes
      */
-    Tree,
-    Node
+    TreeComponent,
+    NodeComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    Tree,
-    Node
+    TreeComponent,
+    NodeComponent
   ],
-  providers:[
+  providers: [
     NodesListService
   ]
 })
