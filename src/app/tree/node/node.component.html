@@ -36,7 +36,8 @@
                 <span>{{node.displayName}}</span>
             </div>
             <div class="tree-text tree-text-editable">
-                <span #disaplyName contenteditable [innerHtml]="node.displayName" (blur)="node.displayName=$event.srcElement.innerText"></span>
+                <span #disaplyName contenteditable [innerHtml]="node.displayName"
+                      (blur)="node.displayName=$event.srcElement.innerText"></span>
                 <span class="children-count"> ({{node.childrenCount()}})</span>
             </div>
         </div>

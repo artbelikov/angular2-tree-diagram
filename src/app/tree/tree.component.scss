@@ -24,13 +24,14 @@
   display: inline-block;
   margin: 15px;
   vertical-align: top;
-  &:only-of-type{
-    > .line-to{
+  &:only-of-type {
+    > .line-to {
       display: none;
     }
   }
 }
-.tree-pane, .tree-paning-container{
+
+.tree-pane, .tree-paning-container {
   position: absolute;
   left: 0;
   top: 0;

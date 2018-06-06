@@ -1,7 +1,7 @@
 # Angular tree diagram
 
 ### About
-This is Angular 2+ Hierarchical UI module. 
+This is Angular 2+ Hierarchical UI module.
 
 ### Preview
 <img src="http://i.imgur.com/CfQXRGm.png" width="500">
@@ -25,8 +25,8 @@ npm i angular2-tree-diagram
 
 ### Usage
 - Import module in your project
-- Use tree-diagram component
-- Pass an array of nodes and the config
+- Use tree-diagram directive
+- Pass array of nodes and config
 - See example.json for more details
 
 ### Example
@@ -51,5 +51,3 @@ data = {
   }
 }
 ```
-
-This project is based on [Angular4 Webpack Starter](https://github.com/AngularClass/angular-starter)

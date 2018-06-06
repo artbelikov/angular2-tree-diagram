@@ -2,45 +2,40 @@
  * Angular 2 decorators and services
  */
 import {
-  Component,
-  ViewEncapsulation
+    Component,
+    ViewEncapsulation
 } from '@angular/core';
-import { AppState } from './app.service';
+import json from './mock-data.json';
 
 /**
  * App Component
  * Top Level Component
  */
 @Component({
-  selector: 'app',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: [
-    './app.component.css'
-  ],
-  template: `
-      <tree-diagram [data]="tree"></tree-diagram>
-  `
+    selector: 'app-root',
+    encapsulation: ViewEncapsulation.None,
+    styleUrls: [
+        './app.component.css'
+    ],
+    template: `
+        <tree-diagram [data]="tree"></tree-diagram>
+    `
 })
-export class AppComponent{
-  constructor(
-    public appState: AppState
-  ) {
-  }
+export class AppComponent {
 
-  public treeConfig = {
-    nodeWidth: 150,
-    nodeHeight: 100
-  }
-
-  public tree: any
-
-
-  public async ngOnInit () {
-    let json = await System.import('../assets/mock-data/mock-data.json')
-    this.tree = {
-      json: json,
-      config: this.treeConfig
+    public treeConfig = {
+        nodeWidth: 150,
+        nodeHeight: 100
     };
-  }
+
+    public tree: any;
+
+
+    public ngOnInit() {
+        this.tree = {
+            json: json,
+            config: this.treeConfig
+        };
+    }
 
 }
