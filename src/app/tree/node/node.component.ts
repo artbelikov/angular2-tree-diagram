@@ -20,6 +20,10 @@ export class Node {
 
     @Input() set treeDiagramNode(guid) {
         this.node = this.nodesSrv.getNode(guid);
-        this.childrenTransform = this.sanitizer.bypassSecurityTrustStyle(`translate(calc(-50% + ${Math.round(this.node.width / 2)}px), 45px)`)
+        let calculation = `translate(calc(-50% + ${Math.round(this.node.width / 2)}px), 45px)`;
+        if (document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl') {
+            calculation = `translate(calc(50% - ${Math.round(this.node.width / 2)}px), 45px)`;
+        }
+        this.childrenTransform = this.sanitizer.bypassSecurityTrustStyle(calculation);
     }
 }
