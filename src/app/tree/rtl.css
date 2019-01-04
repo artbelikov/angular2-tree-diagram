@@ -1,0 +1,13 @@
+html[dir=rtl] .tree-elements-group > div > .line-to {
+    right: 0!important;
+}
+
+html[dir=rtl] .tree-elements-group > div:first-of-type > .line-to {
+    left: -30px!important;
+    right: auto!important;
+}
+
+html[dir=rtl] .tree-elements-group > div:last-of-type > .line-to {
+    right: 0!important;
+    left: auto;
+}
