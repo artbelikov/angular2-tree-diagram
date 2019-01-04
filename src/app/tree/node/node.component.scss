@@ -187,6 +187,7 @@
 
 .tree-text {
   z-index: 10;
+  white-space: pre-line;
   span {
     cursor: pointer;
   }
