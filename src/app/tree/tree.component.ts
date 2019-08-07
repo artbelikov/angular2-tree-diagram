@@ -64,7 +64,7 @@ export class Tree {
         }
     }
 
-    public onmouseup() {
+    public onmouseup(event) {
         this.paneDragging = false
     }
 
