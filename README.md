@@ -1,7 +1,7 @@
 # Angular tree diagram
 
 ### About
-This is a fork of the Angular 2+ Hierarchical UI module.
+This is Angular 2+ Hierarchical UI module.
 
 ### Preview
 <img src="http://i.imgur.com/CfQXRGm.png" width="500">
