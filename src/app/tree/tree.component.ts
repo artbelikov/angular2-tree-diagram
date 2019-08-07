@@ -15,10 +15,18 @@ export class Tree {
         nodeHeight: 100
     };
     private paneDragging = false;
-    private paneTransform;
+    private _paneTransform;
     private zoom = 1;
     private paneX = 0;
     private paneY = 0;
+
+    public get paneTransform() {
+        return this._paneTransform;
+    }
+
+    public set paneTransform(value) {
+        this._paneTransform = value;
+    }
 
     constructor(
         private nodesSrv: NodesListService,
