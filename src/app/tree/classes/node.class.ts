@@ -11,6 +11,10 @@ export class TreeDiagramNode {
     public displayName: string;
     private _toggle: boolean;
 
+    public get isMaker() {
+        return false;
+    }
+
     constructor(props, config, public getThisNodeList: () => TreeDiagramNodesList) {
         if (!props.guid) {
             return;
