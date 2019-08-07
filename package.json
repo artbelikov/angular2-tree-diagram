@@ -1,6 +1,6 @@
 {
   "name": "angular2-tree-diagram",
-  "version": "1.0.7",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
