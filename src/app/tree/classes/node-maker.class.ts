@@ -1,7 +1,11 @@
 import {TreeDiagramNode} from "./node.class"
 
 export class TreeDiagramNodeMaker extends TreeDiagramNode {
-    public isMaker = true;
+    private _isMaker = true;
+
+    public get isMaker() {
+        return this._isMaker;
+    }
 
     public drop(event) {
         event.preventDefault();
