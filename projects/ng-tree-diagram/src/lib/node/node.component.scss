@@ -27,7 +27,6 @@
       display: block;
     }
     .rect {
-
     }
     .children-count {
       display: inline;
@@ -36,7 +35,6 @@
   > .tree-children {
     display: inline-block;
   }
-
 }
 
 .rect {
@@ -159,7 +157,7 @@
     right: -10px;
     bottom: -10px;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       height: 12px;
       width: 4px;
@@ -171,7 +169,7 @@
       background-color: #2ba423;
     }
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 12px;
       height: 4px;
@@ -195,33 +193,34 @@
 
 .tree-elements-group {
   position: relative;
-  & > div {
+
+  & > .tree-node.tree-child {
     & > .line-to {
       left: 0;
       display: block;
     }
-  }
-  & > div:first-of-type {
-    & > .line-to {
-      right: -30px;
-      width: calc(50% + 30px);
-      display: block;
-      left: auto;
+    &:first-of-type {
+      & > .line-to {
+        right: -30px;
+        width: calc(50% + 30px);
+        display: block;
+        left: auto;
+      }
     }
-  }
-  & > div:last-of-type {
-    & > .line-to {
-      left: 0;
-      right: auto;
-      width: 50%;
-      display: block;
+    &:last-of-type {
+      & > .line-to {
+        left: 0;
+        right: auto;
+        width: 50%;
+        display: block;
+      }
     }
-  }
-  > .tree-child:last-child {
-    margin-right: 0;
-  }
-  > .tree-child:first-child {
-    margin-left: 0;
+    > .tree-child:last-child {
+      margin-right: 0;
+    }
+    > .tree-child:first-child {
+      margin-left: 0;
+    }
   }
 }
 
@@ -235,12 +234,14 @@
     border: 1px dashed #dadada;
     cursor: pointer !important;
   }
-  &:hover, &.dragover {
+  &:hover,
+  &.dragover {
     .rect {
       opacity: 1;
     }
   }
-  .tree-children, .buttons {
+  .tree-children,
+  .buttons {
     display: none !important;
   }
   .tree-text-non-editable {

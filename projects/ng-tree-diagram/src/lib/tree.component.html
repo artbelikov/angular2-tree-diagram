@@ -1,0 +1,27 @@
+<div
+  class="tree-pane"
+  (mousedown)="onmousedown()"
+  (mouseup)="onmouseup()"
+  (mousemove)="onmousemove($event)"
+  (mousewheel)="onmousewheel($event)"
+>
+  <div class="tree-paning-container" [style.transform]="paneTransform">
+    <div *ngIf="nodes" class="tree-roots-elements">
+
+      <tree-diagram-node
+        [nodeId]="node.guid"
+        class="tree-root tree-node"
+        (mousedown)="preventMouse($event)"
+        *ngFor="let node of nodes.roots"
+      ></tree-diagram-node>
+
+      <tree-diagram-node
+        [nodeId]="nodeMaker"
+        (click)="newNode()"
+        (mousedown)="preventMouse($event)"
+        class="tree-root tree-new-node tree-node"
+      ></tree-diagram-node>
+
+    </div>
+  </div>
+</div>

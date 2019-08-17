@@ -3,21 +3,22 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular2-tree-diagram": {
+    "ng8-tree-diagram": {
+      "projectType": "application",
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "projectType": "application",
       "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular2-tree-diagram",
+            "outputPath": "dist/ng8-tree-diagram",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -43,25 +44,37 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular2-tree-diagram:build"
+            "browserTarget": "ng8-tree-diagram:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular2-tree-diagram:build:production"
+              "browserTarget": "ng8-tree-diagram:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular2-tree-diagram:build"
+            "browserTarget": "ng8-tree-diagram:build"
           }
         },
         "test": {
@@ -69,24 +82,72 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ]
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "ng8-tree-diagram:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng8-tree-diagram:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ng-tree-diagram": {
+      "projectType": "library",
+      "root": "projects/ng-tree-diagram",
+      "sourceRoot": "projects/ng-tree-diagram/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build:production",
+          "options": {
+            "tsConfig": "projects/ng-tree-diagram/tsconfig.lib.json",
+            "project": "projects/ng-tree-diagram/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-tree-diagram/src/test.ts",
+            "tsConfig": "projects/ng-tree-diagram/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-tree-diagram/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-tree-diagram/tsconfig.lib.json",
+              "projects/ng-tree-diagram/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -94,34 +155,6 @@
           }
         }
       }
-    },
-    "angular2-tree-diagram-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular2-tree-diagram:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "angular2-tree-diagram:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    }
-  },
-  "defaultProject": "angular2-tree-diagram"
+    }},
+  "defaultProject": "ng8-tree-diagram"
 }
