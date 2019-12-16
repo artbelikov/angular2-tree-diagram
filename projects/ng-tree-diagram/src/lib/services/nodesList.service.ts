@@ -12,7 +12,7 @@ export class NodesListService {
   }
 
   public getNode(guid) {
-    return guid && this.nodesList.getNode(guid);
+    return this.nodesList.getNode(guid);
   }
 
   public newNode() {
@@ -21,5 +21,9 @@ export class NodesListService {
 
   public makerNode() {
     return this.nodesList.makerGuid;
+  }
+
+  public toJsonString() {
+    return JSON.stringify(this.nodesList.serialize())
   }
 }

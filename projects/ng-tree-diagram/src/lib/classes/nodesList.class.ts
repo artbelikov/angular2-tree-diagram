@@ -135,10 +135,10 @@ export class TreeDiagramNodesList {
       const json: any = {
         guid: node.guid,
         displayName: node.displayName,
-        parentId: node.parentId
+        parentId: node.parentId,
+        children: Array.from(node.children),
       };
 
-      json.children = Array.from(node.children);
       out.push(json);
     });
 
