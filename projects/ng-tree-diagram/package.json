@@ -1,6 +1,6 @@
 {
   "name": "angular2-tree-diagram",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "peerDependencies": {
     "@angular/common": "^8.2.0",
     "@angular/core": "^8.2.0"
