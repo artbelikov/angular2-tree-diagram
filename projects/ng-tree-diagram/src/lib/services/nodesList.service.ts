@@ -24,6 +24,6 @@ export class NodesListService {
   }
 
   public toJsonString() {
-    return JSON.stringify(this.nodesList.serialize())
+    return JSON.stringify(this.nodesList.serialize());
   }
 }
