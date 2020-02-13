@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TreeDiagramNodesList } from '../classes/nodesList.class';
+import { TreeDiagramNodesList } from '../classes';
 
 @Injectable()
 export class NodesListService {

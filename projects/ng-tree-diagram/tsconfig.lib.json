@@ -9,16 +9,11 @@
     "lib": [
       "dom",
       "es2018"
-    ],
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    ]
   },
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
     "enableResourceInlining": true
   },
   "exclude": [

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng8-tree-diagram": {
+    "ng9-tree-diagram": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng8-tree-diagram",
+            "outputPath": "dist/ng9-tree-diagram",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -41,7 +41,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -63,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng8-tree-diagram:build"
+            "browserTarget": "ng9-tree-diagram:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng8-tree-diagram:build:production"
+              "browserTarget": "ng9-tree-diagram:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng8-tree-diagram:build"
+            "browserTarget": "ng9-tree-diagram:build"
           }
         },
         "test": {
@@ -111,11 +110,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng8-tree-diagram:serve"
+            "devServerTarget": "ng9-tree-diagram:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng8-tree-diagram:serve:production"
+              "devServerTarget": "ng9-tree-diagram:serve:production"
             }
           }
         }
@@ -128,10 +127,15 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build:production",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/ng-tree-diagram/tsconfig.lib.json",
             "project": "projects/ng-tree-diagram/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-tree-diagram/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -156,5 +160,5 @@
         }
       }
     }},
-  "defaultProject": "ng8-tree-diagram"
+  "defaultProject": "ng9-tree-diagram"
 }

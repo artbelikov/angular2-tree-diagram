@@ -26,6 +26,14 @@
       ],
       "ng-tree-diagram/*": [
         "dist/ng-tree-diagram/*"
+      ],
+      "my-lib": [
+        "dist/my-lib/my-lib",
+        "dist/my-lib"
+      ],
+      "ng-tree-diagram2": [
+        "dist/ng-tree-diagram2/ng-tree-diagram2",
+        "dist/ng-tree-diagram2"
       ]
     }
   },

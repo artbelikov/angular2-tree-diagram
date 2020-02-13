@@ -1,4 +1,4 @@
-import { TreeDiagramNodesList } from './nodesList.class';
+import { TreeDiagramNodesList } from './nodes-list.class';
 
 export class TreeDiagramNode {
   public parentId: string | null;

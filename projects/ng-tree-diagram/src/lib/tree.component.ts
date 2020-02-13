@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { NodesListService } from './services/nodesList.service';
+import { NodesListService } from './services/nodes-list.service';
 
 @Component({
   // tslint:disable-next-line:component-selector

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { NodesListService } from '../services/nodesList.service';
+import { NodesListService } from '../services/nodes-list.service';
 import { TreeDiagramNode } from '../classes/node.class';
 import { TreeDiagramNodeMaker } from '../classes/node-maker.class';
 

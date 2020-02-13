@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { TreeComponent } from './tree.component';
 import { NodeComponent } from './node';
-import { NodesListService } from './services/nodesList.service';
+import { NodesListService } from './services/nodes-list.service';
 
 @NgModule({
     declarations: [
